@@ -17,7 +17,7 @@ chmod 777 cache/ log/
 *** /etc/apache2/sites-available/<filename>
 
 *** add following:
-
+NameVirtualHost 127.0.0.1:80
 <VirtualHost *:80>
     ServerName chemist.local
     ServerName chemist.local
@@ -97,3 +97,26 @@ if (!in_array(@$_SERVER['REMOTE_ADDR'], array('127.0.0.1', '::1')))
 http://chemist.local/backend_dev.php/products
 
 *** Congratulations! You have successfully created your symfony project.
+
+
+
+
+****** Git *******
+
+git clone git@github.com:saschalion/chemist.git
+
+sudo chmod 777 -R *
+
+*** After change files need to do following:
+
+git add *
+
+git commit -m "<any_message>"
+
+** And to send your commit go to repository:
+
+git push    
+
+** If you want to get files from repository:
+
+git pull
