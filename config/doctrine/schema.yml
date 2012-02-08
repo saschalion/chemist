@@ -1,0 +1,10 @@
+Products:
+  columns:
+    type:         { type: string(255) }
+    company:      { type: string(255), notnull: true }
+    category:      { type: string(255), notnull: true }
+    logo:         { type: string(255) }
+    url:          { type: string(255) }
+    description:  { type: string(4000)}
+    among:  { type: string(6)}
+    token:        { type: string(255), unique: true }

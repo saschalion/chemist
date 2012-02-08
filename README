@@ -1,0 +1,99 @@
+*** Create project
+
+mkdir chemist
+mkdir lib
+mkdir vendor
+cd lib/vendor
+tar zxpf symfony-1.4.6.tgz
+mv symfony-1.4.6 symfony
+rm symfony-1.4.6 tgz
+
+php lib/vendor/symfony/data/bin/symfony generate:project chemist
+
+chmod 777 cache/ log/
+
+*** Setting Apache
+
+*** /etc/apache2/sites-available/<filename>
+
+*** add following:
+
+<VirtualHost *:80>
+    ServerName chemist.local
+    ServerName chemist.local
+  DocumentRoot "/home/<username>/<project_path>/chemist/web"
+  DirectoryIndex index.php
+  <Directory "/home/<username>/<project_path>/chemist/web">
+    AllowOverride All
+    Allow from All
+  </Directory>
+
+  Alias /sf /home/<username>/<project_path>/chemist/lib/vendor/symfony/data/web/sf/
+  <Directory "/home/<username>/<project_path>/chemist/lib/vendor/symfony/data/web/sf/">
+    AllowOverride All
+    Allow from All
+  </Directory>
+</VirtualHost>
+
+*** /etc/hosts:
+*** add following:
+
+127.0.0.13 chemist.local
+
+*** then in console:
+
+sudo invoke-rc.d apache2 restart 
+
+Create database "chemist"
+
+*** change file /<your_project>/config/database.yml/
+
+all:
+  doctrine:
+    class: sfDoctrineDatabase
+    param:
+      dsn:      mysql:host=localhost;dbname=chemist
+      username: <username_mysql>
+      password: <password_mysql>
+
+*** Create tables in database
+*** change file /<your_project>/config/doctrine/schema.yml
+
+Products:
+  columns:
+    type:         { type: string(255) }
+    company:      { type: string(255), notnull: true }
+    category:      { type: string(255), notnull: true }
+    logo:         { type: string(255) }
+    url:          { type: string(255) }
+    description:  { type: string(4000)}
+    among:  { type: string(6)}
+    token:        { type: string(255), unique: true }
+
+*** in console:
+
+./symfony doctrine:build --all
+
+*** Create backend
+
+./symfony generate:app backend
+
+*** Create module for backend named "Products"
+
+./symfony doctrine:generate-admin backend Products --module=products
+
+*** change file /<your_project>/web/backend_dev.php
+*** and following need to remowe
+
+// this check prevents access to debug front controllers that are deployed by accident to production servers.
+// feel free to remove this, extend it or make something more sophisticated.
+if (!in_array(@$_SERVER['REMOTE_ADDR'], array('127.0.0.1', '::1')))
+{
+  die('You are not allowed to access this file. Check '.basename(__FILE__).' for more information.');
+}
+
+*** go to in the web browser
+
+http://chemist.local/backend_dev.php/products
+
+*** Congratulations! You have successfully created your symfony project.
