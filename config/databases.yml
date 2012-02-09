@@ -7,4 +7,4 @@ all:
     param:
       dsn:      mysql:host=localhost;dbname=chemist
       username: root
-      password: 666
+      password: 123
