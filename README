@@ -17,7 +17,7 @@ chmod 777 cache/ log/
 *** /etc/apache2/sites-available/<filename>
 
 *** add following:
-
+NameVirtualHost 127.0.0.1:80
 <VirtualHost *:80>
     ServerName chemist.local
     ServerName chemist.local
@@ -56,6 +56,10 @@ all:
       username: <username_mysql>
       password: <password_mysql>
 
+options:
+    collate: utf8_general_ci
+    charset: utf8
+
 *** Create tables in database
 *** change file /<your_project>/config/doctrine/schema.yml
 
@@ -70,7 +74,7 @@ Products:
     among:  { type: string(6)}
     token:        { type: string(255), unique: true }
 
-*** in console:
+*** in console from <your_project> folder:
 
 ./symfony doctrine:build --all
 
@@ -97,3 +101,72 @@ if (!in_array(@$_SERVER['REMOTE_ADDR'], array('127.0.0.1', '::1')))
 http://chemist.local/backend_dev.php/products
 
 *** Congratulations! You have successfully created your symfony project.
+
+
+
+
+****** Git *******
+
+git clone git@github.com:saschalion/chemist.git
+
+sudo chmod 777 -R *
+
+*** After change files need to do following:
+
+git add *
+
+git commit -m "<any_message>"
+
+** And to send your commit go to repository:
+
+git push    
+
+** If you want to get files from repository:
+
+git pull
+
+*** Необходимые разделы:
+
+table ЗАЯВКИ 
+    количество, 
+    кратность (0,000), 
+    ЕДИНИЦА ИЗМЕРЕНИЯ table: упаковка и т.д., 
+    цена, 
+    сумма, 
+    чекбокс - остро необходим
+
+table РЕЕСТР 
+    артикул, 
+    коммерческое наименование (анальгин), 
+    хим. наим., 
+    международное наим., 
+    ФОРМА ВЫПУСКА (table: таблетки, р-р д/ин 1мл 50%), 
+    СТРАНА (table), 
+    ГРУППА (table: медикаменты), 
+    наличие
+    ФАРМ. ГРУППА (table: пиразолоны), 
+    описание
+
+    table ХАКАКТЕРИСТИКИ ФОРМЫ ВЫПУСКА
+        активность (0), 
+        концентрат (50,%), 
+        количество (10,амп - список), 
+        дозировка (0), 
+        вес (0), 
+        объем (1, мл)
+
+table НАКЛАДНЫЕ
+    реквизиты:
+        поставщик
+        получатель
+        отв. лицо
+        отв. лицо орг-ции
+            доверенность №
+            дата
+        № договора
+            дата договора
+            № лицензии
+            дата лицензии
+        примечание    
+
+

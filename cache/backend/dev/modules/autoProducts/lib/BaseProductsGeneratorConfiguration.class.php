@@ -47,7 +47,7 @@ abstract class BaseProductsGeneratorConfiguration extends sfModelGeneratorConfig
 
   public function getListParams()
   {
-    return '%%id%% - %%type%% - %%company%% - %%category%% - %%logo%% - %%url%% - %%description%% - %%among%% - %%token%%';
+    return '%%id%% - %%purchase_name%% - %%preparation_form_id%% - %%created_at%% - %%updated_at%%';
   }
 
   public function getListLayout()
@@ -92,21 +92,17 @@ abstract class BaseProductsGeneratorConfiguration extends sfModelGeneratorConfig
 
   public function getListDisplay()
   {
-    return array(  0 => 'id',  1 => 'type',  2 => 'company',  3 => 'category',  4 => 'logo',  5 => 'url',  6 => 'description',  7 => 'among',  8 => 'token',);
+    return array(  0 => 'id',  1 => 'purchase_name',  2 => 'preparation_form_id',  3 => 'created_at',  4 => 'updated_at',);
   }
 
   public function getFieldsDefault()
   {
     return array(
       'id' => array(  'is_link' => true,  'is_real' => true,  'is_partial' => false,  'is_component' => false,  'type' => 'Text',),
-      'type' => array(  'is_link' => false,  'is_real' => true,  'is_partial' => false,  'is_component' => false,  'type' => 'Text',),
-      'company' => array(  'is_link' => false,  'is_real' => true,  'is_partial' => false,  'is_component' => false,  'type' => 'Text',),
-      'category' => array(  'is_link' => false,  'is_real' => true,  'is_partial' => false,  'is_component' => false,  'type' => 'Text',),
-      'logo' => array(  'is_link' => false,  'is_real' => true,  'is_partial' => false,  'is_component' => false,  'type' => 'Text',),
-      'url' => array(  'is_link' => false,  'is_real' => true,  'is_partial' => false,  'is_component' => false,  'type' => 'Text',),
-      'description' => array(  'is_link' => false,  'is_real' => true,  'is_partial' => false,  'is_component' => false,  'type' => 'Text',),
-      'among' => array(  'is_link' => false,  'is_real' => true,  'is_partial' => false,  'is_component' => false,  'type' => 'Text',),
-      'token' => array(  'is_link' => false,  'is_real' => true,  'is_partial' => false,  'is_component' => false,  'type' => 'Text',),
+      'purchase_name' => array(  'is_link' => false,  'is_real' => true,  'is_partial' => false,  'is_component' => false,  'type' => 'Text',),
+      'preparation_form_id' => array(  'is_link' => false,  'is_real' => true,  'is_partial' => false,  'is_component' => false,  'type' => 'ForeignKey',),
+      'created_at' => array(  'is_link' => false,  'is_real' => true,  'is_partial' => false,  'is_component' => false,  'type' => 'Date',),
+      'updated_at' => array(  'is_link' => false,  'is_real' => true,  'is_partial' => false,  'is_component' => false,  'type' => 'Date',),
     );
   }
 
@@ -114,14 +110,10 @@ abstract class BaseProductsGeneratorConfiguration extends sfModelGeneratorConfig
   {
     return array(
       'id' => array(),
-      'type' => array(),
-      'company' => array(),
-      'category' => array(),
-      'logo' => array(),
-      'url' => array(),
-      'description' => array(),
-      'among' => array(),
-      'token' => array(),
+      'purchase_name' => array(),
+      'preparation_form_id' => array(),
+      'created_at' => array(),
+      'updated_at' => array(),
     );
   }
 
@@ -129,14 +121,10 @@ abstract class BaseProductsGeneratorConfiguration extends sfModelGeneratorConfig
   {
     return array(
       'id' => array(),
-      'type' => array(),
-      'company' => array(),
-      'category' => array(),
-      'logo' => array(),
-      'url' => array(),
-      'description' => array(),
-      'among' => array(),
-      'token' => array(),
+      'purchase_name' => array(),
+      'preparation_form_id' => array(),
+      'created_at' => array(),
+      'updated_at' => array(),
     );
   }
 
@@ -144,14 +132,10 @@ abstract class BaseProductsGeneratorConfiguration extends sfModelGeneratorConfig
   {
     return array(
       'id' => array(),
-      'type' => array(),
-      'company' => array(),
-      'category' => array(),
-      'logo' => array(),
-      'url' => array(),
-      'description' => array(),
-      'among' => array(),
-      'token' => array(),
+      'purchase_name' => array(),
+      'preparation_form_id' => array(),
+      'created_at' => array(),
+      'updated_at' => array(),
     );
   }
 
@@ -159,14 +143,10 @@ abstract class BaseProductsGeneratorConfiguration extends sfModelGeneratorConfig
   {
     return array(
       'id' => array(),
-      'type' => array(),
-      'company' => array(),
-      'category' => array(),
-      'logo' => array(),
-      'url' => array(),
-      'description' => array(),
-      'among' => array(),
-      'token' => array(),
+      'purchase_name' => array(),
+      'preparation_form_id' => array(),
+      'created_at' => array(),
+      'updated_at' => array(),
     );
   }
 
@@ -174,14 +154,10 @@ abstract class BaseProductsGeneratorConfiguration extends sfModelGeneratorConfig
   {
     return array(
       'id' => array(),
-      'type' => array(),
-      'company' => array(),
-      'category' => array(),
-      'logo' => array(),
-      'url' => array(),
-      'description' => array(),
-      'among' => array(),
-      'token' => array(),
+      'purchase_name' => array(),
+      'preparation_form_id' => array(),
+      'created_at' => array(),
+      'updated_at' => array(),
     );
   }
 

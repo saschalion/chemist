@@ -15,32 +15,20 @@ abstract class BaseProductsForm extends BaseFormDoctrine
   public function setup()
   {
     $this->setWidgets(array(
-      'id'          => new sfWidgetFormInputHidden(),
-      'type'        => new sfWidgetFormInputText(),
-      'company'     => new sfWidgetFormInputText(),
-      'category'    => new sfWidgetFormInputText(),
-      'logo'        => new sfWidgetFormInputText(),
-      'url'         => new sfWidgetFormInputText(),
-      'description' => new sfWidgetFormTextarea(),
-      'among'       => new sfWidgetFormInputText(),
-      'token'       => new sfWidgetFormInputText(),
+      'id'                  => new sfWidgetFormInputHidden(),
+      'purchase_name'       => new sfWidgetFormInputText(),
+      'preparation_form_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('PreparationForm'), 'add_empty' => false)),
+      'created_at'          => new sfWidgetFormDateTime(),
+      'updated_at'          => new sfWidgetFormDateTime(),
     ));
 
     $this->setValidators(array(
-      'id'          => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
-      'type'        => new sfValidatorString(array('max_length' => 255, 'required' => false)),
-      'company'     => new sfValidatorString(array('max_length' => 255)),
-      'category'    => new sfValidatorString(array('max_length' => 255)),
-      'logo'        => new sfValidatorString(array('max_length' => 255, 'required' => false)),
-      'url'         => new sfValidatorString(array('max_length' => 255, 'required' => false)),
-      'description' => new sfValidatorString(array('max_length' => 4000, 'required' => false)),
-      'among'       => new sfValidatorString(array('max_length' => 6, 'required' => false)),
-      'token'       => new sfValidatorString(array('max_length' => 255, 'required' => false)),
+      'id'                  => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
+      'purchase_name'       => new sfValidatorString(array('max_length' => 255, 'required' => false)),
+      'preparation_form_id' => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('PreparationForm'))),
+      'created_at'          => new sfValidatorDateTime(),
+      'updated_at'          => new sfValidatorDateTime(),
     ));
-
-    $this->validatorSchema->setPostValidator(
-      new sfValidatorDoctrineUnique(array('model' => 'Products', 'column' => array('token')))
-    );
 
     $this->widgetSchema->setNameFormat('products[%s]');
 

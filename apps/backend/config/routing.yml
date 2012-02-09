@@ -1,3 +1,12 @@
+preparation_form:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                PreparationForm
+    module:               PreparationForm
+    prefix_path:          /PreparationForm
+    column:               id
+    with_wildcard_routes: true
+
 products:
   class: sfDoctrineRouteCollection
   options:

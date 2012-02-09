@@ -1,27 +1,15 @@
 <td class="sf_admin_text sf_admin_list_td_id">
   <?php echo link_to($products->getId(), 'products_edit', $products) ?>
 </td>
-<td class="sf_admin_text sf_admin_list_td_type">
-  <?php echo $products->getType() ?>
+<td class="sf_admin_text sf_admin_list_td_purchase_name">
+  <?php echo $products->getPurchaseName() ?>
 </td>
-<td class="sf_admin_text sf_admin_list_td_company">
-  <?php echo $products->getCompany() ?>
+<td class="sf_admin_foreignkey sf_admin_list_td_preparation_form_id">
+  <?php echo $products->getPreparationFormId() ?>
 </td>
-<td class="sf_admin_text sf_admin_list_td_category">
-  <?php echo $products->getCategory() ?>
+<td class="sf_admin_date sf_admin_list_td_created_at">
+  <?php echo false !== strtotime($products->getCreatedAt()) ? format_date($products->getCreatedAt(), "f") : '&nbsp;' ?>
 </td>
-<td class="sf_admin_text sf_admin_list_td_logo">
-  <?php echo $products->getLogo() ?>
-</td>
-<td class="sf_admin_text sf_admin_list_td_url">
-  <?php echo $products->getUrl() ?>
-</td>
-<td class="sf_admin_text sf_admin_list_td_description">
-  <?php echo $products->getDescription() ?>
-</td>
-<td class="sf_admin_text sf_admin_list_td_among">
-  <?php echo $products->getAmong() ?>
-</td>
-<td class="sf_admin_text sf_admin_list_td_token">
-  <?php echo $products->getToken() ?>
+<td class="sf_admin_date sf_admin_list_td_updated_at">
+  <?php echo false !== strtotime($products->getUpdatedAt()) ? format_date($products->getUpdatedAt(), "f") : '&nbsp;' ?>
 </td>
