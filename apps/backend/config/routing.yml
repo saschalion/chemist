@@ -1,3 +1,12 @@
+producer:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Producer
+    module:               producer
+    prefix_path:          /producer
+    column:               id
+    with_wildcard_routes: true
+
 preparation_form:
   class: sfDoctrineRouteCollection
   options:
