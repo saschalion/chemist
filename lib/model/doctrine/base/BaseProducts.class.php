@@ -7,14 +7,29 @@
  * 
  * @property string $purchase_name
  * @property integer $preparation_form_id
+ * @property string $type
+ * @property integer $code
+ * @property string $action_substance
+ * @property integer $producer_id
  * @property PreparationForm $PreparationForm
+ * @property Producer $Producer
  * 
  * @method string          getPurchaseName()        Returns the current record's "purchase_name" value
  * @method integer         getPreparationFormId()   Returns the current record's "preparation_form_id" value
+ * @method string          getType()                Returns the current record's "type" value
+ * @method integer         getCode()                Returns the current record's "code" value
+ * @method string          getActionSubstance()     Returns the current record's "action_substance" value
+ * @method integer         getProducerId()          Returns the current record's "producer_id" value
  * @method PreparationForm getPreparationForm()     Returns the current record's "PreparationForm" value
+ * @method Producer        getProducer()            Returns the current record's "Producer" value
  * @method Products        setPurchaseName()        Sets the current record's "purchase_name" value
  * @method Products        setPreparationFormId()   Sets the current record's "preparation_form_id" value
+ * @method Products        setType()                Sets the current record's "type" value
+ * @method Products        setCode()                Sets the current record's "code" value
+ * @method Products        setActionSubstance()     Sets the current record's "action_substance" value
+ * @method Products        setProducerId()          Sets the current record's "producer_id" value
  * @method Products        setPreparationForm()     Sets the current record's "PreparationForm" value
+ * @method Products        setProducer()            Sets the current record's "Producer" value
  * 
  * @package    chemist
  * @subpackage model
@@ -28,11 +43,26 @@ abstract class BaseProducts extends sfDoctrineRecord
         $this->setTableName('products');
         $this->hasColumn('purchase_name', 'string', 255, array(
              'type' => 'string',
+             'unique' => true,
              'length' => 255,
              ));
         $this->hasColumn('preparation_form_id', 'integer', null, array(
              'type' => 'integer',
              'notnull' => true,
+             ));
+        $this->hasColumn('type', 'string', 255, array(
+             'type' => 'string',
+             'length' => 255,
+             ));
+        $this->hasColumn('code', 'integer', null, array(
+             'type' => 'integer',
+             ));
+        $this->hasColumn('action_substance', 'string', 255, array(
+             'type' => 'string',
+             'length' => 255,
+             ));
+        $this->hasColumn('producer_id', 'integer', null, array(
+             'type' => 'integer',
              ));
 
         $this->option('collate', 'utf8_general_ci');
@@ -44,6 +74,11 @@ abstract class BaseProducts extends sfDoctrineRecord
         parent::setUp();
         $this->hasOne('PreparationForm', array(
              'local' => 'preparation_form_id',
+             'foreign' => 'id',
+             'onDelete' => 'CASCADE'));
+
+        $this->hasOne('Producer', array(
+             'local' => 'producer_id',
              'foreign' => 'id',
              'onDelete' => 'CASCADE'));
 

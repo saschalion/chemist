@@ -6,16 +6,29 @@ Products:
   columns:
     purchase_name: 
       type: string(255)
+      unique: true
     preparation_form_id: 
         type: integer
         notnull: true
-    
+    type: 
+      type: string(255)
+    code: 
+      type: integer
+    action_substance:
+      type: string(255)
+    producer_id: integer
+      
   relations:
     PreparationForm:
       onDelete: CASCADE
       local: preparation_form_id
       foreign: id
       foreignAlias: PreparationForm  
+    Producer:
+      onDelete: CASCADE
+      local: producer_id
+      foreign: id
+      foreignAlias: Producer  
 
 # Лекарственная форма
 
@@ -27,6 +40,17 @@ PreparationForm:
       type: string(255)
       notnull: true
       unique: true
+      
+# Производители
+
+Producer:
+  actAs:
+    Timestampable: ~
+  columns:
+    name:
+      type: string(255)
+      notnull: true
+      unique: true      
       
 options:
     collate: utf8_general_ci

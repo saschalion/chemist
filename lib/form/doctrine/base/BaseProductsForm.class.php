@@ -18,6 +18,10 @@ abstract class BaseProductsForm extends BaseFormDoctrine
       'id'                  => new sfWidgetFormInputHidden(),
       'purchase_name'       => new sfWidgetFormInputText(),
       'preparation_form_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('PreparationForm'), 'add_empty' => false)),
+      'type'                => new sfWidgetFormInputText(),
+      'code'                => new sfWidgetFormInputText(),
+      'action_substance'    => new sfWidgetFormInputText(),
+      'producer_id'         => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Producer'), 'add_empty' => true)),
       'created_at'          => new sfWidgetFormDateTime(),
       'updated_at'          => new sfWidgetFormDateTime(),
     ));
@@ -26,9 +30,17 @@ abstract class BaseProductsForm extends BaseFormDoctrine
       'id'                  => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
       'purchase_name'       => new sfValidatorString(array('max_length' => 255, 'required' => false)),
       'preparation_form_id' => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('PreparationForm'))),
+      'type'                => new sfValidatorString(array('max_length' => 255, 'required' => false)),
+      'code'                => new sfValidatorInteger(array('required' => false)),
+      'action_substance'    => new sfValidatorString(array('max_length' => 255, 'required' => false)),
+      'producer_id'         => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Producer'), 'required' => false)),
       'created_at'          => new sfValidatorDateTime(),
       'updated_at'          => new sfValidatorDateTime(),
     ));
+
+    $this->validatorSchema->setPostValidator(
+      new sfValidatorDoctrineUnique(array('model' => 'Products', 'column' => array('purchase_name')))
+    );
 
     $this->widgetSchema->setNameFormat('products[%s]');
 
