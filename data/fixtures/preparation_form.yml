@@ -1,17 +1,48 @@
-# # Populate this file with data to be loaded by your ORM's *:data-load task.
-# # You can create multiple files in this directory (i.e. 010_users.yml,
-# # 020_articles.yml, etc) which will be loaded in alphabetical order.
-# # 
-# # See documentation for your ORM's *:data-load task for more information.
-# 
-# User:
-#   fabien:
-#     username: fabien
-#     password: changeme
-#     name:     Fabien Potencier
-#     email:    fabien.potencier@symfony-project.com
-#   kris:
-#     username: Kris.Wallsmith
-#     password: changeme
-#     name:     Kris Wallsmith
-#     email:    kris.wallsmith@symfony-project.com
+PreparationForm:
+  form_1:
+    id: 1
+    name: A Пищеварительный тракт и обмен веществ
+    
+  form_2:
+    id: 2
+    name: B Кровь и система кроветворения
+    
+  form_3:
+    id: 3
+    name: C Сердечно-сосудистая система
+    
+  form_4:
+    id: 4
+    name: D Дерматологические препараты
+    
+  form_5:
+    id: 5
+    name: H Гормональные препараты системного днйствия, кроме половых гормонов и инсулинов
+    
+  form_6:
+    id: 6
+    name: J Противомикробные препараты системного действия
+    
+  form_7:
+    id: 7
+    name: M Костно-мышечная система
+    
+  form_8:
+    id: 8
+    name: N Нервная система
+    
+  form_9:
+    id: 9
+    name: P Противопаразитарные препараты, инсектициды и репелленты 
+    
+  form_10:
+    id: 10
+    name: R Дыхательная система
+    
+  form_11:
+    id: 11
+    name: S Органы чувств
+    
+  form_12:
+    id: 12
+    name: V Прочие препараты

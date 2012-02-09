@@ -13,4 +13,34 @@ require_once dirname(__FILE__).'/../lib/productsGeneratorHelper.class.php';
  */
 class productsActions extends autoProductsActions
 {
+    
+      public function preExecute()
+  {
+    $this->configuration = new productsGeneratorConfiguration();
+
+    if (!$this->getUser()->hasCredential($this->configuration->getCredentials($this->getActionName())))
+    {
+      $this->forward(sfConfig::get('sf_secure_module'), sfConfig::get('sf_secure_action'));
+    }
+
+    $this->dispatcher->notify(new sfEvent($this, 'admin.pre_execute', array('configuration' => $this->configuration)));
+
+    $this->helper = new productsGeneratorHelper();
+
+    parent::preExecute();
+    
+    $this->getResponse()->addJavascript('/js/jquery-1.4.2.min.js', 'first');
+    $this->getResponse()->addJavascript('/sfFormExtraPlugin/js/jquery.autocompleter.js', 'last');
+    $this->getResponse()->addJavascript('/js/jquery.json-2.2.js', 'last');
+  }
+    
+      public function executeNew(sfWebRequest $request)
+  {
+    $this->form = $this->configuration->getForm();
+    $this->products = $this->form->getObject();
+    $this->getResponse()->addJavascript('/js/jquery-1.4.2.min.js', 'first');
+    $this->getResponse()->addJavascript('/sfFormExtraPlugin/js/jquery.autocompleter.js', 'last');
+    $this->getResponse()->addJavascript('/js/jquery.json-2.2.js', 'last');
+  }
+  
 }

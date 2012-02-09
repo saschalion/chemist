@@ -13,4 +13,26 @@ require_once dirname(__FILE__).'/../lib/PreparationFormGeneratorHelper.class.php
  */
 class PreparationFormActions extends autoPreparationFormActions
 {
+      public function executeAutocomplete($request)
+  { 
+    $this->getResponse()->setContentType('application/json');
+ 
+    $q = "%" . $request->getParameter('q') . "%";
+    
+    $limit = $request->getParameter('limit');
+    
+    // FIXME: use $limit
+    $dql = Doctrine_Query::create()
+         ->from('PreparationForm p')
+    		 ->where('p.name LIKE ? OR p.name LIKE ?', array($q, $q));
+    $this->rows = $dql->fetchArray();
+
+    $persons = array();
+    foreach ($this->rows as $row)
+    {
+      $persons[$row['id']] = (string) $row['name'];
+    }
+  
+    return $this->renderText(json_encode($persons));
+  }
 }
