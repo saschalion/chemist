@@ -1,3 +1,3 @@
-<td colspan="9">
-  <?php echo __('%%id%% - %%type%% - %%company%% - %%category%% - %%logo%% - %%url%% - %%description%% - %%among%% - %%token%%', array('%%id%%' => link_to($products->getId(), 'products_edit', $products), '%%type%%' => $products->getType(), '%%company%%' => $products->getCompany(), '%%category%%' => $products->getCategory(), '%%logo%%' => $products->getLogo(), '%%url%%' => $products->getUrl(), '%%description%%' => $products->getDescription(), '%%among%%' => $products->getAmong(), '%%token%%' => $products->getToken()), 'messages') ?>
+<td colspan="5">
+  <?php echo __('%%id%% - %%purchase_name%% - %%preparation_form_id%% - %%created_at%% - %%updated_at%%', array('%%id%%' => link_to($products->getId(), 'products_edit', $products), '%%purchase_name%%' => $products->getPurchaseName(), '%%preparation_form_id%%' => $products->getPreparationFormId(), '%%created_at%%' => false !== strtotime($products->getCreatedAt()) ? format_date($products->getCreatedAt(), "f") : '&nbsp;', '%%updated_at%%' => false !== strtotime($products->getUpdatedAt()) ? format_date($products->getUpdatedAt(), "f") : '&nbsp;'), 'messages') ?>
 </td>

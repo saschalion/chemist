@@ -8,3 +8,7 @@ all:
       dsn:      mysql:host=localhost;dbname=chemist
       username: root
       password: 666
+
+options:
+    collate: utf8_general_ci
+    charset: utf8

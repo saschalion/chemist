@@ -56,6 +56,10 @@ all:
       username: <username_mysql>
       password: <password_mysql>
 
+options:
+    collate: utf8_general_ci
+    charset: utf8
+
 *** Create tables in database
 *** change file /<your_project>/config/doctrine/schema.yml
 

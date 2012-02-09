@@ -12,7 +12,7 @@
       </thead>
       <tfoot>
         <tr>
-          <th colspan="11">
+          <th colspan="7">
             <?php if ($pager->haveToPaginate()): ?>
               <?php include_partial('products/pagination', array('pager' => $pager)) ?>
             <?php endif; ?>

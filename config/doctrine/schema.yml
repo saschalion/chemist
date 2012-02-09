@@ -1,10 +1,33 @@
+# Реестр товаров
+
 Products:
+  actAs:
+    Timestampable: ~
   columns:
-    type:         { type: string(255) }
-    company:      { type: string(255), notnull: true }
-    category:      { type: string(255), notnull: true }
-    logo:         { type: string(255) }
-    url:          { type: string(255) }
-    description:  { type: string(4000)}
-    among:  { type: string(6)}
-    token:        { type: string(255), unique: true }
+    purchase_name: 
+      type: string(255)
+    preparation_form_id: 
+        type: integer
+        notnull: true
+    
+  relations:
+    PreparationForm:
+      onDelete: CASCADE
+      local: preparation_form_id
+      foreign: id
+      foreignAlias: PreparationForm  
+
+# Лекарственная форма
+
+PreparationForm:
+  actAs:
+    Timestampable: ~
+  columns:
+    name:
+      type: string(255)
+      notnull: true
+      unique: true
+      
+options:
+    collate: utf8_general_ci
+    charset: utf8

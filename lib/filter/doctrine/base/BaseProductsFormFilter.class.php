@@ -13,25 +13,17 @@ abstract class BaseProductsFormFilter extends BaseFormFilterDoctrine
   public function setup()
   {
     $this->setWidgets(array(
-      'type'        => new sfWidgetFormFilterInput(),
-      'company'     => new sfWidgetFormFilterInput(array('with_empty' => false)),
-      'category'    => new sfWidgetFormFilterInput(array('with_empty' => false)),
-      'logo'        => new sfWidgetFormFilterInput(),
-      'url'         => new sfWidgetFormFilterInput(),
-      'description' => new sfWidgetFormFilterInput(),
-      'among'       => new sfWidgetFormFilterInput(),
-      'token'       => new sfWidgetFormFilterInput(),
+      'purchase_name'       => new sfWidgetFormFilterInput(),
+      'preparation_form_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('PreparationForm'), 'add_empty' => true)),
+      'created_at'          => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => false)),
+      'updated_at'          => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => false)),
     ));
 
     $this->setValidators(array(
-      'type'        => new sfValidatorPass(array('required' => false)),
-      'company'     => new sfValidatorPass(array('required' => false)),
-      'category'    => new sfValidatorPass(array('required' => false)),
-      'logo'        => new sfValidatorPass(array('required' => false)),
-      'url'         => new sfValidatorPass(array('required' => false)),
-      'description' => new sfValidatorPass(array('required' => false)),
-      'among'       => new sfValidatorPass(array('required' => false)),
-      'token'       => new sfValidatorPass(array('required' => false)),
+      'purchase_name'       => new sfValidatorPass(array('required' => false)),
+      'preparation_form_id' => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('PreparationForm'), 'column' => 'id')),
+      'created_at'          => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 00:00:00')), 'to_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 23:59:59')))),
+      'updated_at'          => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 00:00:00')), 'to_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 23:59:59')))),
     ));
 
     $this->widgetSchema->setNameFormat('products_filters[%s]');
@@ -51,15 +43,11 @@ abstract class BaseProductsFormFilter extends BaseFormFilterDoctrine
   public function getFields()
   {
     return array(
-      'id'          => 'Number',
-      'type'        => 'Text',
-      'company'     => 'Text',
-      'category'    => 'Text',
-      'logo'        => 'Text',
-      'url'         => 'Text',
-      'description' => 'Text',
-      'among'       => 'Text',
-      'token'       => 'Text',
+      'id'                  => 'Number',
+      'purchase_name'       => 'Text',
+      'preparation_form_id' => 'ForeignKey',
+      'created_at'          => 'Date',
+      'updated_at'          => 'Date',
     );
   }
 }
