@@ -1,0 +1,25 @@
+## YAML Template.
+producer:
+  producer_1:
+    id: 1
+    name: INKOS+
+    
+  producer_2:
+    id: 2
+    name: Протек
+    
+  producer_3:
+    id: 3
+    name: Катрен
+    
+  producer_4:
+    id: 4
+    name: Сиа интернейшнл	
+    
+  producer_5:
+    id: 5
+    name: Морон
+    
+  producer_6:
+    id: 6
+    name: Шалом Изральевич Ашкенайзе
