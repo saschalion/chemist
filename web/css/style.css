@@ -1,0 +1,43 @@
+#menu ul {
+    padding: 0;
+    margin: 20px 0;
+}
+
+#menu ul li {
+    float: left;
+    text-align: center;
+    height: 20px;
+    line-height: 20px;
+    list-style: none;
+}
+
+#menu ul li a {
+    padding: 0 20px;
+    display: block;
+    background: #ccc;
+    color: #333;
+}
+
+#menu ul li a:hover {
+    display: block;
+    background: #fff;
+    color: #333;
+}
+
+#menu ul li.active a {
+    background: #999;
+    color: #000;
+}
+
+h1 {
+    clear: both;
+}
+
+.sf_admin_filter {
+    width: 200px;
+    margin: 0 50px 0 0;
+}
+
+.sf_admin_filter select {
+    width: 100%;
+}

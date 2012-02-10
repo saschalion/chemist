@@ -28,7 +28,9 @@ class productsActions extends autoProductsActions
     $this->helper = new productsGeneratorHelper();
 
     parent::preExecute();
-    
+
+    $this->getResponse()->addStylesheet('style.css', 'last');
+
     $this->getResponse()->addJavascript('/js/jquery-1.4.2.min.js', 'first');
     $this->getResponse()->addJavascript('/sfFormExtraPlugin/js/jquery.autocompleter.js', 'last');
     $this->getResponse()->addJavascript('/js/jquery.json-2.2.js', 'last');
