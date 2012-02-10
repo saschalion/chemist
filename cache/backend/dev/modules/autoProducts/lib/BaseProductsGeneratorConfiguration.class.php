@@ -47,7 +47,7 @@ abstract class BaseProductsGeneratorConfiguration extends sfModelGeneratorConfig
 
   public function getListParams()
   {
-    return '%%id%% - %%purchase_name%% - %%preparation_form_id%% - %%created_at%% - %%updated_at%%';
+    return '%%id%% - %%purchase_name%% - %%preparation_form_id%% - %%type%% - %%code%% - %%action_substance%% - %%producer_id%% - %%created_at%% - %%updated_at%%';
   }
 
   public function getListLayout()
@@ -92,7 +92,7 @@ abstract class BaseProductsGeneratorConfiguration extends sfModelGeneratorConfig
 
   public function getListDisplay()
   {
-    return array(  0 => 'id',  1 => 'purchase_name',  2 => 'preparation_form_id',  3 => 'created_at',  4 => 'updated_at',);
+    return array(  0 => 'id',  1 => 'purchase_name',  2 => 'preparation_form_id',  3 => 'type',  4 => 'code',  5 => 'action_substance',  6 => 'producer_id',  7 => 'created_at',  8 => 'updated_at',);
   }
 
   public function getFieldsDefault()
@@ -101,6 +101,10 @@ abstract class BaseProductsGeneratorConfiguration extends sfModelGeneratorConfig
       'id' => array(  'is_link' => true,  'is_real' => true,  'is_partial' => false,  'is_component' => false,  'type' => 'Text',),
       'purchase_name' => array(  'is_link' => false,  'is_real' => true,  'is_partial' => false,  'is_component' => false,  'type' => 'Text',),
       'preparation_form_id' => array(  'is_link' => false,  'is_real' => true,  'is_partial' => false,  'is_component' => false,  'type' => 'ForeignKey',),
+      'type' => array(  'is_link' => false,  'is_real' => true,  'is_partial' => false,  'is_component' => false,  'type' => 'Text',),
+      'code' => array(  'is_link' => false,  'is_real' => true,  'is_partial' => false,  'is_component' => false,  'type' => 'Text',),
+      'action_substance' => array(  'is_link' => false,  'is_real' => true,  'is_partial' => false,  'is_component' => false,  'type' => 'Text',),
+      'producer_id' => array(  'is_link' => false,  'is_real' => true,  'is_partial' => false,  'is_component' => false,  'type' => 'ForeignKey',),
       'created_at' => array(  'is_link' => false,  'is_real' => true,  'is_partial' => false,  'is_component' => false,  'type' => 'Date',),
       'updated_at' => array(  'is_link' => false,  'is_real' => true,  'is_partial' => false,  'is_component' => false,  'type' => 'Date',),
     );
@@ -112,6 +116,10 @@ abstract class BaseProductsGeneratorConfiguration extends sfModelGeneratorConfig
       'id' => array(),
       'purchase_name' => array(),
       'preparation_form_id' => array(),
+      'type' => array(),
+      'code' => array(),
+      'action_substance' => array(),
+      'producer_id' => array(),
       'created_at' => array(),
       'updated_at' => array(),
     );
@@ -123,6 +131,10 @@ abstract class BaseProductsGeneratorConfiguration extends sfModelGeneratorConfig
       'id' => array(),
       'purchase_name' => array(),
       'preparation_form_id' => array(),
+      'type' => array(),
+      'code' => array(),
+      'action_substance' => array(),
+      'producer_id' => array(),
       'created_at' => array(),
       'updated_at' => array(),
     );
@@ -134,6 +146,10 @@ abstract class BaseProductsGeneratorConfiguration extends sfModelGeneratorConfig
       'id' => array(),
       'purchase_name' => array(),
       'preparation_form_id' => array(),
+      'type' => array(),
+      'code' => array(),
+      'action_substance' => array(),
+      'producer_id' => array(),
       'created_at' => array(),
       'updated_at' => array(),
     );
@@ -145,6 +161,10 @@ abstract class BaseProductsGeneratorConfiguration extends sfModelGeneratorConfig
       'id' => array(),
       'purchase_name' => array(),
       'preparation_form_id' => array(),
+      'type' => array(),
+      'code' => array(),
+      'action_substance' => array(),
+      'producer_id' => array(),
       'created_at' => array(),
       'updated_at' => array(),
     );
@@ -156,6 +176,10 @@ abstract class BaseProductsGeneratorConfiguration extends sfModelGeneratorConfig
       'id' => array(),
       'purchase_name' => array(),
       'preparation_form_id' => array(),
+      'type' => array(),
+      'code' => array(),
+      'action_substance' => array(),
+      'producer_id' => array(),
       'created_at' => array(),
       'updated_at' => array(),
     );

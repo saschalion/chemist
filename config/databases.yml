@@ -1,14 +1,8 @@
-# You can find more information about this file on the symfony website:
-# http://www.symfony-project.org/reference/1_4/en/07-Databases
-
 all:
   doctrine:
     class: sfDoctrineDatabase
     param:
       dsn:      mysql:host=localhost;dbname=chemist
       username: root
-      password: 666
+      password: 123
 
-options:
-    collate: utf8_general_ci
-    charset: utf8
