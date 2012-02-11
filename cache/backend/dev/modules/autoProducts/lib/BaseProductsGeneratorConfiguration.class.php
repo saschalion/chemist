@@ -72,7 +72,7 @@ abstract class BaseProductsGeneratorConfiguration extends sfModelGeneratorConfig
 
   public function getFilterDisplay()
   {
-    return array();
+    return array(  0 => 'purchase_name',  1 => 'preparation_form_id',  2 => 'code',  3 => 'type',  4 => 'action_substance',  5 => 'producer_id',);
   }
 
   public function getFormDisplay()

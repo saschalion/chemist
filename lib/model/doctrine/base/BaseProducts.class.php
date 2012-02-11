@@ -8,7 +8,7 @@
  * @property string $purchase_name
  * @property integer $preparation_form_id
  * @property string $type
- * @property integer $code
+ * @property string $code
  * @property string $action_substance
  * @property integer $producer_id
  * @property PreparationForm $PreparationForm
@@ -17,7 +17,7 @@
  * @method string          getPurchaseName()        Returns the current record's "purchase_name" value
  * @method integer         getPreparationFormId()   Returns the current record's "preparation_form_id" value
  * @method string          getType()                Returns the current record's "type" value
- * @method integer         getCode()                Returns the current record's "code" value
+ * @method string          getCode()                Returns the current record's "code" value
  * @method string          getActionSubstance()     Returns the current record's "action_substance" value
  * @method integer         getProducerId()          Returns the current record's "producer_id" value
  * @method PreparationForm getPreparationForm()     Returns the current record's "PreparationForm" value
@@ -54,8 +54,9 @@ abstract class BaseProducts extends sfDoctrineRecord
              'type' => 'string',
              'length' => 255,
              ));
-        $this->hasColumn('code', 'integer', null, array(
-             'type' => 'integer',
+        $this->hasColumn('code', 'string', 255, array(
+             'type' => 'string',
+             'length' => 255,
              ));
         $this->hasColumn('action_substance', 'string', 255, array(
              'type' => 'string',

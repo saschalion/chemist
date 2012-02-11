@@ -31,7 +31,7 @@ abstract class BaseProductsForm extends BaseFormDoctrine
       'purchase_name'       => new sfValidatorString(array('max_length' => 255, 'required' => false)),
       'preparation_form_id' => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('PreparationForm'))),
       'type'                => new sfValidatorString(array('max_length' => 255, 'required' => false)),
-      'code'                => new sfValidatorInteger(array('required' => false)),
+      'code'                => new sfValidatorString(array('max_length' => 255, 'required' => false)),
       'action_substance'    => new sfValidatorString(array('max_length' => 255, 'required' => false)),
       'producer_id'         => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Producer'), 'required' => false)),
       'created_at'          => new sfValidatorDateTime(),
