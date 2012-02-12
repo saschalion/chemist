@@ -2,7 +2,7 @@
 <?php include_partial('producer/assets') ?>
 
 <div id="sf_admin_container">
-  <h1><?php echo __('New Producer', array(), 'messages') ?></h1>
+  <h1><?php echo __('Добавить производителя', array(), 'messages') ?></h1>
 
   <?php include_partial('producer/flashes') ?>
 

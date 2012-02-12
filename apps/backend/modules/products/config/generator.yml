@@ -12,7 +12,19 @@ generator:
     actions_base_class:    sfActions
 
     config:
-      actions: ~
+      actions: 
+        _save_and_add:
+          label: Сохранить и добавить
+        _save:
+          label: Сохранить
+        _edit:
+          label: Редактировать
+        _list:
+          label: Назад к списку
+        _delete:
+          label: Удалить
+        _new:
+          label: Добавить
       fields:  ~
       list:    ~
       filter:

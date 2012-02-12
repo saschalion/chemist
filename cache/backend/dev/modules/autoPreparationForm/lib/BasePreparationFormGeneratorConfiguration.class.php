@@ -12,7 +12,7 @@ abstract class BasePreparationFormGeneratorConfiguration extends sfModelGenerato
 {
   public function getActionsDefault()
   {
-    return array();
+    return array(  '_save_and_add' =>   array(    'label' => 'Сохранить и добавить',  ),  '_save' =>   array(    'label' => 'Сохранить',  ),  '_edit' =>   array(    'label' => 'Редактировать',  ),  '_list' =>   array(    'label' => 'Назад к списку',  ),  '_delete' =>   array(    'label' => 'Удалить',  ),  '_new' =>   array(    'label' => 'Добавить',  ),);
   }
 
   public function getFormActions()
@@ -47,7 +47,7 @@ abstract class BasePreparationFormGeneratorConfiguration extends sfModelGenerato
 
   public function getListParams()
   {
-    return '%%id%% - %%name%% - %%created_at%% - %%updated_at%%';
+    return '%%name%%';
   }
 
   public function getListLayout()
@@ -72,12 +72,12 @@ abstract class BasePreparationFormGeneratorConfiguration extends sfModelGenerato
 
   public function getFilterDisplay()
   {
-    return array();
+    return array(  0 => 'name',);
   }
 
   public function getFormDisplay()
   {
-    return array();
+    return array(  0 => 'name',);
   }
 
   public function getEditDisplay()
@@ -92,7 +92,7 @@ abstract class BasePreparationFormGeneratorConfiguration extends sfModelGenerato
 
   public function getListDisplay()
   {
-    return array(  0 => 'id',  1 => 'name',  2 => 'created_at',  3 => 'updated_at',);
+    return array(  0 => 'name',);
   }
 
   public function getFieldsDefault()
