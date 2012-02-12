@@ -32,8 +32,7 @@ class productsActions extends autoProductsActions
     $this->getResponse()->addStylesheet('style.css', 'last');
     $this->getResponse()->addStylesheet('highslide.css', 'last');
 
-    $this->getResponse()->addJavascript('/js/highslide.js', 'last');
-    $this->getResponse()->addJavascript('/js/js.js', 'last');
+    $this->getResponse()->addJavascript('/js/popup.js', 'last');
     $this->getResponse()->addJavascript('/js/jquery-1.4.2.min.js', 'first');
   }
     
