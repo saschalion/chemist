@@ -37,7 +37,7 @@
       </div>
 
       <div id="footer">
-          &copy; 2012 Moskow
+          &copy; 2012 Mosсow
       </div>
     </div>
   </body>

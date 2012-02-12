@@ -13,7 +13,7 @@ Products:
     type: 
       type: string(255)
     code: 
-      type: integer
+      type: string(255)
     action_substance:
       type: string(255)
     producer_id: integer
