@@ -34847,3 +34847,79 @@ Feb 12 18:13:49 symfony [info] {sfWebDebugLogger} Partial "global/_list_actions"
 Feb 12 18:13:49 symfony [info] {sfWebDebugLogger} Partial "products/_list_footer" 0.49 ms (1)
 Feb 12 18:13:49 symfony [info] {sfWebDebugLogger} Partial "global/_menu" 2.26 ms (1)
 Feb 12 18:13:49 symfony [info] {sfWebResponse} Send content (104325 o)
+Feb 12 18:15:40 symfony [info] {sfPatternRouting} Match route "products" (/products.:sf_format) for /products with parameters array (  'module' => 'products',  'action' => 'index',  'sf_format' => 'html',)
+Feb 12 18:15:40 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Feb 12 18:15:40 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Feb 12 18:15:40 symfony [info] {productsActions} Call "productsActions->executeIndex()"
+Feb 12 18:15:40 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Feb 12 18:15:40 symfony [info] {Doctrine_Connection_Mysql} query : SELECT COUNT(*) AS num_results FROM products p - ()
+Feb 12 18:15:40 symfony [info] {sfPHPView} Render "/home/fairdev/projects/chemist/apps/backend/modules/products/templates/indexSuccess.php"
+Feb 12 18:15:40 symfony [info] {sfPartialView} Render "/home/fairdev/projects/chemist/cache/backend/dev/modules/autoProducts/templates/_assets.php"
+Feb 12 18:15:40 symfony [info] {sfPartialView} Render "/home/fairdev/projects/chemist/cache/backend/dev/modules/autoProducts/templates/_flashes.php"
+Feb 12 18:15:40 symfony [info] {sfPartialView} Render "/home/fairdev/projects/chemist/cache/backend/dev/modules/autoProducts/templates/_list_header.php"
+Feb 12 18:15:40 symfony [info] {sfPartialView} Render "/home/fairdev/projects/chemist/apps/backend/modules/products/templates/_filters.php"
+Feb 12 18:15:40 symfony [info] {sfPartialView} Render "/home/fairdev/projects/chemist/cache/backend/dev/modules/autoProducts/templates/_filters_field.php"
+Feb 12 18:15:40 symfony [info] {sfPartialView} Render "/home/fairdev/projects/chemist/cache/backend/dev/modules/autoProducts/templates/_filters_field.php"
+Feb 12 18:15:40 symfony [info] {Doctrine_Connection_Mysql} query : SELECT p.id AS p__id, p.name AS p__name, p.created_at AS p__created_at, p.updated_at AS p__updated_at FROM preparation_form p - ()
+Feb 12 18:15:40 symfony [info] {sfPartialView} Render "/home/fairdev/projects/chemist/cache/backend/dev/modules/autoProducts/templates/_filters_field.php"
+Feb 12 18:15:40 symfony [info] {sfPartialView} Render "/home/fairdev/projects/chemist/cache/backend/dev/modules/autoProducts/templates/_filters_field.php"
+Feb 12 18:15:40 symfony [info] {sfPartialView} Render "/home/fairdev/projects/chemist/cache/backend/dev/modules/autoProducts/templates/_filters_field.php"
+Feb 12 18:15:40 symfony [info] {sfPartialView} Render "/home/fairdev/projects/chemist/cache/backend/dev/modules/autoProducts/templates/_filters_field.php"
+Feb 12 18:15:40 symfony [info] {Doctrine_Connection_Mysql} query : SELECT p.id AS p__id, p.name AS p__name, p.created_at AS p__created_at, p.updated_at AS p__updated_at FROM producer p - ()
+Feb 12 18:15:40 symfony [info] {sfPartialView} Render "/home/fairdev/projects/chemist/apps/backend/modules/products/templates/_list.php"
+Feb 12 18:15:40 symfony [info] {sfPartialView} Render "/home/fairdev/projects/chemist/cache/backend/dev/modules/autoProducts/templates/_list_th_tabular.php"
+Feb 12 18:15:40 symfony [info] {main} Set slot "sf_admin.current_header"
+Feb 12 18:15:40 symfony [info] {main} Get slot "sf_admin.current_header"
+Feb 12 18:15:40 symfony [info] {main} Set slot "sf_admin.current_header"
+Feb 12 18:15:40 symfony [info] {main} Get slot "sf_admin.current_header"
+Feb 12 18:15:40 symfony [info] {main} Set slot "sf_admin.current_header"
+Feb 12 18:15:40 symfony [info] {main} Get slot "sf_admin.current_header"
+Feb 12 18:15:40 symfony [info] {main} Set slot "sf_admin.current_header"
+Feb 12 18:15:40 symfony [info] {main} Get slot "sf_admin.current_header"
+Feb 12 18:15:40 symfony [info] {main} Set slot "sf_admin.current_header"
+Feb 12 18:15:40 symfony [info] {main} Get slot "sf_admin.current_header"
+Feb 12 18:15:40 symfony [info] {main} Set slot "sf_admin.current_header"
+Feb 12 18:15:40 symfony [info] {main} Get slot "sf_admin.current_header"
+Feb 12 18:15:40 symfony [info] {main} Set slot "sf_admin.current_header"
+Feb 12 18:15:40 symfony [info] {main} Get slot "sf_admin.current_header"
+Feb 12 18:15:40 symfony [info] {main} Set slot "sf_admin.current_header"
+Feb 12 18:15:40 symfony [info] {main} Get slot "sf_admin.current_header"
+Feb 12 18:15:40 symfony [info] {main} Set slot "sf_admin.current_header"
+Feb 12 18:15:40 symfony [info] {main} Get slot "sf_admin.current_header"
+Feb 12 18:15:40 symfony [info] {Doctrine_Connection_Mysql} query : SELECT p.id AS p__id, p.purchase_name AS p__purchase_name, p.preparation_form_id AS p__preparation_form_id, p.type AS p__type, p.code AS p__code, p.action_substance AS p__action_substance, p.producer_id AS p__producer_id, p.created_at AS p__created_at, p.updated_at AS p__updated_at FROM products p ORDER BY p.preparation_form_id asc LIMIT 20 - ()
+Feb 12 18:15:40 symfony [info] {sfPartialView} Render "/home/fairdev/projects/chemist/cache/backend/dev/modules/autoProducts/templates/_list_td_batch_actions.php"
+Feb 12 18:15:40 symfony [info] {sfPartialView} Render "/home/fairdev/projects/chemist/apps/backend/modules/products/templates/_list_td_tabular.php"
+Feb 12 18:15:40 symfony [info] {Doctrine_Connection_Statement} execute : SELECT p.id AS p__id, p.name AS p__name, p.created_at AS p__created_at, p.updated_at AS p__updated_at FROM preparation_form p WHERE (p.id = ?) - (1)
+Feb 12 18:15:40 symfony [info] {sfPartialView} Render "/home/fairdev/projects/chemist/apps/backend/modules/products/templates/_list_td_actions.php"
+Feb 12 18:15:40 symfony [info] {sfPartialView} Render "/home/fairdev/projects/chemist/cache/backend/dev/modules/autoProducts/templates/_list_td_batch_actions.php"
+Feb 12 18:15:40 symfony [info] {sfPartialView} Render "/home/fairdev/projects/chemist/apps/backend/modules/products/templates/_list_td_tabular.php"
+Feb 12 18:15:40 symfony [info] {Doctrine_Connection_Statement} execute : SELECT p.id AS p__id, p.name AS p__name, p.created_at AS p__created_at, p.updated_at AS p__updated_at FROM preparation_form p WHERE (p.id = ?) - (5)
+Feb 12 18:15:40 symfony [info] {sfPartialView} Render "/home/fairdev/projects/chemist/apps/backend/modules/products/templates/_list_td_actions.php"
+Feb 12 18:15:40 symfony [info] {sfPartialView} Render "/home/fairdev/projects/chemist/apps/backend/templates/_list_batch_actions.php"
+Feb 12 18:15:40 symfony [info] {sfPartialView} Render "/home/fairdev/projects/chemist/apps/backend/templates/_list_actions.php"
+Feb 12 18:15:40 symfony [info] {sfPartialView} Render "/home/fairdev/projects/chemist/cache/backend/dev/modules/autoProducts/templates/_list_footer.php"
+Feb 12 18:15:40 symfony [info] {sfPHPView} Decorate content with "/home/fairdev/projects/chemist/apps/backend/templates/layout.php"
+Feb 12 18:15:40 symfony [info] {sfPHPView} Render "/home/fairdev/projects/chemist/apps/backend/templates/layout.php"
+Feb 12 18:15:40 symfony [info] {sfPartialView} Render "/home/fairdev/projects/chemist/apps/backend/templates/_menu.php"
+Feb 12 18:15:40 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Feb 12 18:15:40 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Feb 12 18:15:40 symfony [info] {sfWebDebugLogger} Configuration 1.52 ms (11)
+Feb 12 18:15:40 symfony [info] {sfWebDebugLogger} Factories 33.43 ms (1)
+Feb 12 18:15:40 symfony [info] {sfWebDebugLogger} Action "products/index" 49.92 ms (1)
+Feb 12 18:15:40 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.02 ms (7)
+Feb 12 18:15:40 symfony [info] {sfWebDebugLogger} View "Success" for "products/index" 82.50 ms (1)
+Feb 12 18:15:40 symfony [info] {sfWebDebugLogger} Partial "products/_assets" 0.54 ms (1)
+Feb 12 18:15:40 symfony [info] {sfWebDebugLogger} Partial "products/_flashes" 0.55 ms (1)
+Feb 12 18:15:40 symfony [info] {sfWebDebugLogger} Partial "products/_list_header" 0.47 ms (1)
+Feb 12 18:15:40 symfony [info] {sfWebDebugLogger} Partial "products/_filters" 27.37 ms (1)
+Feb 12 18:15:40 symfony [info] {sfWebDebugLogger} Partial "products/_filters_field" 20.29 ms (6)
+Feb 12 18:15:40 symfony [info] {sfWebDebugLogger} Partial "products/_list" 36.46 ms (1)
+Feb 12 18:15:40 symfony [info] {sfWebDebugLogger} Partial "products/_list_th_tabular" 3.89 ms (1)
+Feb 12 18:15:40 symfony [info] {sfWebDebugLogger} Partial "products/_list_td_batch_actions" 1.23 ms (2)
+Feb 12 18:15:40 symfony [info] {sfWebDebugLogger} Partial "products/_list_td_tabular" 22.31 ms (2)
+Feb 12 18:15:40 symfony [info] {sfWebDebugLogger} Partial "products/_list_td_actions" 3.46 ms (2)
+Feb 12 18:15:40 symfony [info] {sfWebDebugLogger} Partial "global/_list_batch_actions" 1.03 ms (1)
+Feb 12 18:15:40 symfony [info] {sfWebDebugLogger} Partial "global/_list_actions" 0.71 ms (1)
+Feb 12 18:15:40 symfony [info] {sfWebDebugLogger} Partial "products/_list_footer" 0.48 ms (1)
+Feb 12 18:15:40 symfony [info] {sfWebDebugLogger} Partial "global/_menu" 2.23 ms (1)
+Feb 12 18:15:40 symfony [info] {sfWebResponse} Send content (104120 o)

@@ -1,3 +1,5 @@
+<?php use_helper('Date') ?>
+
 <td class="sf_admin_text sf_admin_list_td_id">
   <?php echo link_to($products->getId(), 'products_edit', $products) ?>
 </td>
@@ -20,8 +22,5 @@
   <?php echo $products->getProducerId() ?>
 </td>
 <td class="sf_admin_date sf_admin_list_td_created_at">
-  <?php echo false !== strtotime($products->getCreatedAt()) ? format_date($products->getCreatedAt(), "f") : '&nbsp;' ?>
-</td>
-<td class="sf_admin_date sf_admin_list_td_updated_at">
-  <?php echo false !== strtotime($products->getUpdatedAt()) ? format_date($products->getUpdatedAt(), "f") : '&nbsp;' ?>
+  <?php echo false !== strtotime($products->getCreatedAt()) ? format_date($products->getCreatedAt(), "dd.MM.yyyy") : '&nbsp;' ?>
 </td>
