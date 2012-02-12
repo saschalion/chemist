@@ -29,6 +29,16 @@
 </th>
 <?php end_slot(); ?>
 <?php include_slot('sf_admin.current_header') ?><?php slot('sf_admin.current_header') ?>
+<th class="sf_admin_text sf_admin_list_th_approach_usage">
+  <?php if ('approach_usage' == $sort[0]): ?>
+    <?php echo link_to(__('Approach usage', array(), 'messages'), '@products', array('query_string' => 'sort=approach_usage&sort_type='.($sort[1] == 'asc' ? 'desc' : 'asc'))) ?>
+    <?php echo image_tag(sfConfig::get('sf_admin_module_web_dir').'/images/'.$sort[1].'.png', array('alt' => __($sort[1], array(), 'sf_admin'), 'title' => __($sort[1], array(), 'sf_admin'))) ?>
+  <?php else: ?>
+    <?php echo link_to(__('Approach usage', array(), 'messages'), '@products', array('query_string' => 'sort=approach_usage&sort_type=asc')) ?>
+  <?php endif; ?>
+</th>
+<?php end_slot(); ?>
+<?php include_slot('sf_admin.current_header') ?><?php slot('sf_admin.current_header') ?>
 <th class="sf_admin_text sf_admin_list_th_type">
   <?php if ('type' == $sort[0]): ?>
     <?php echo link_to(__('Type', array(), 'messages'), '@products', array('query_string' => 'sort=type&sort_type='.($sort[1] == 'asc' ? 'desc' : 'asc'))) ?>

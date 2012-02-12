@@ -7,6 +7,11 @@
     <?php use_stylesheet('style.css') ?>
     <?php include_javascripts() ?>
     <?php include_stylesheets() ?>
+    <script type="text/javascript">
+        hs.graphicsDir = 'images/graphics/';
+        hs.outlineType = 'rounded-white';
+        hs.wrapperClassName = 'draggable-header';
+    </script>
 </head>
 <body>
     <?php $module = sfContext::getInstance()->getModuleName(); ?>

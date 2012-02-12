@@ -7,6 +7,7 @@
  * 
  * @property string $purchase_name
  * @property integer $preparation_form_id
+ * @property string $approach_usage
  * @property string $type
  * @property string $code
  * @property string $action_substance
@@ -16,6 +17,7 @@
  * 
  * @method string          getPurchaseName()        Returns the current record's "purchase_name" value
  * @method integer         getPreparationFormId()   Returns the current record's "preparation_form_id" value
+ * @method string          getApproachUsage()       Returns the current record's "approach_usage" value
  * @method string          getType()                Returns the current record's "type" value
  * @method string          getCode()                Returns the current record's "code" value
  * @method string          getActionSubstance()     Returns the current record's "action_substance" value
@@ -24,6 +26,7 @@
  * @method Producer        getProducer()            Returns the current record's "Producer" value
  * @method Products        setPurchaseName()        Sets the current record's "purchase_name" value
  * @method Products        setPreparationFormId()   Sets the current record's "preparation_form_id" value
+ * @method Products        setApproachUsage()       Sets the current record's "approach_usage" value
  * @method Products        setType()                Sets the current record's "type" value
  * @method Products        setCode()                Sets the current record's "code" value
  * @method Products        setActionSubstance()     Sets the current record's "action_substance" value
@@ -49,6 +52,9 @@ abstract class BaseProducts extends sfDoctrineRecord
         $this->hasColumn('preparation_form_id', 'integer', null, array(
              'type' => 'integer',
              'notnull' => true,
+             ));
+        $this->hasColumn('approach_usage', 'string', null, array(
+             'type' => 'string',
              ));
         $this->hasColumn('type', 'string', 255, array(
              'type' => 'string',

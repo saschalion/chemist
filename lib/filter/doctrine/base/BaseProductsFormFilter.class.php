@@ -15,6 +15,7 @@ abstract class BaseProductsFormFilter extends BaseFormFilterDoctrine
     $this->setWidgets(array(
       'purchase_name'       => new sfWidgetFormFilterInput(),
       'preparation_form_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('PreparationForm'), 'add_empty' => true)),
+      'approach_usage'      => new sfWidgetFormFilterInput(),
       'type'                => new sfWidgetFormFilterInput(),
       'code'                => new sfWidgetFormFilterInput(),
       'action_substance'    => new sfWidgetFormFilterInput(),
@@ -26,6 +27,7 @@ abstract class BaseProductsFormFilter extends BaseFormFilterDoctrine
     $this->setValidators(array(
       'purchase_name'       => new sfValidatorPass(array('required' => false)),
       'preparation_form_id' => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('PreparationForm'), 'column' => 'id')),
+      'approach_usage'      => new sfValidatorPass(array('required' => false)),
       'type'                => new sfValidatorPass(array('required' => false)),
       'code'                => new sfValidatorPass(array('required' => false)),
       'action_substance'    => new sfValidatorPass(array('required' => false)),
@@ -54,6 +56,7 @@ abstract class BaseProductsFormFilter extends BaseFormFilterDoctrine
       'id'                  => 'Number',
       'purchase_name'       => 'Text',
       'preparation_form_id' => 'ForeignKey',
+      'approach_usage'      => 'Text',
       'type'                => 'Text',
       'code'                => 'Text',
       'action_substance'    => 'Text',
