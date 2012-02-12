@@ -44,5 +44,26 @@ class productsActions extends autoProductsActions
     $this->getResponse()->addJavascript('/sfFormExtraPlugin/js/jquery.autocompleter.js', 'last');
     $this->getResponse()->addJavascript('/js/jquery.json-2.2.js', 'last');
   }
+
+      public function executeList(sfWebRequest $request)
+  {
+        // sorting
+    if ($request->getParameter('sort') && $this->isValidSortColumn($request->getParameter('sort')))
+    {
+      $this->setSort(array($request->getParameter('sort'), $request->getParameter('sort_type')));
+    }
+
+    // pager
+    if ($request->getParameter('page'))
+    {
+      $this->setPage($request->getParameter('page'));
+    }
+
+    $this->pager = $this->getPager();
+    $this->sort = $this->getSort();
+
+    $this->form = $this->configuration->getForm();
+    $this->products = $this->form->getObject();
+  }
   
 }

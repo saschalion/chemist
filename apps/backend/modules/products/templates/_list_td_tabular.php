@@ -5,7 +5,7 @@
   <?php echo $products->getPurchaseName() ?>
 </td>
 <td class="sf_admin_foreignkey sf_admin_list_td_preparation_form_id">
-  <?php echo $products->getPreparationForm() ?>
+  <?php echo $products->getPreparationFormId() ?>
 </td>
 <td class="sf_admin_text sf_admin_list_td_type">
   <?php echo $products->getType() ?>
