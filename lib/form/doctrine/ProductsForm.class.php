@@ -30,5 +30,15 @@ class ProductsForm extends BaseProductsForm
 
     $this->widgetSchema['approach_usage'] = new sfWidgetFormTextarea(array(
     ));
+
+    $this->widgetSchema->setLabels(array(
+          'purchase_name' => 'Название препарата',
+          'preparation_form_id' => 'Форма препарата',
+          'approach_usage' => 'Способ применения и дозы',
+          'type' => 'Тип',
+          'code' => 'Код',
+          'action_substance' => 'Действие вещества',
+          'producer_id' => 'Производитель'
+    ));
   }
 }
