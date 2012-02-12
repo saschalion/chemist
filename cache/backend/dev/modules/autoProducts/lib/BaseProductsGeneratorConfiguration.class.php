@@ -67,7 +67,7 @@ abstract class BaseProductsGeneratorConfiguration extends sfModelGeneratorConfig
 
   public function getNewTitle()
   {
-    return 'New Products';
+    return 'Добавить препарат';
   }
 
   public function getFilterDisplay()

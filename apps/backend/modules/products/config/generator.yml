@@ -19,4 +19,5 @@ generator:
         display: [purchase_name, preparation_form_id, code, type, action_substance, producer_id]
       form:    ~
       edit:    ~
-      new:     ~
+      new:
+        title: Добавить препарат

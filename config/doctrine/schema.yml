@@ -16,7 +16,10 @@ Products:
       type: string(255)
     action_substance:
       type: string(255)
-    producer_id: integer
+    producer_id: 
+      type: integer
+    availability:
+      type: integer
       
   relations:
     PreparationForm:

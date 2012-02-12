@@ -7,13 +7,13 @@
   <?php endif; ?>
 
   <form action="<?php echo url_for('products_collection', array('action' => 'filter')) ?>" method="post">
-    <table cellspacing="0">
+    <table>
       <tfoot>
         <tr>
           <td colspan="2">
             <?php echo $form->renderHiddenFields() ?>
-            <?php echo link_to(__('Reset', array(), 'sf_admin'), 'products_collection', array('action' => 'filter'), array('query_string' => '_reset', 'method' => 'post')) ?>
-            <input type="submit" value="<?php echo __('Filter', array(), 'sf_admin') ?>" />
+            <?php echo link_to(__('Обновить', array(), 'sf_admin'), 'products_collection', array('action' => 'filter'), array('query_string' => '_reset', 'method' => 'post')) ?>
+            <input type="submit" value="<?php echo __('Найти', array(), 'sf_admin') ?>" />
           </td>
         </tr>
       </tfoot>

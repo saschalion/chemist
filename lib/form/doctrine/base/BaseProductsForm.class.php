@@ -22,6 +22,7 @@ abstract class BaseProductsForm extends BaseFormDoctrine
       'code'                => new sfWidgetFormInputText(),
       'action_substance'    => new sfWidgetFormInputText(),
       'producer_id'         => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Producer'), 'add_empty' => true)),
+      'availability'        => new sfWidgetFormInputText(),
       'created_at'          => new sfWidgetFormDateTime(),
       'updated_at'          => new sfWidgetFormDateTime(),
     ));
@@ -34,6 +35,7 @@ abstract class BaseProductsForm extends BaseFormDoctrine
       'code'                => new sfValidatorString(array('max_length' => 255, 'required' => false)),
       'action_substance'    => new sfValidatorString(array('max_length' => 255, 'required' => false)),
       'producer_id'         => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Producer'), 'required' => false)),
+      'availability'        => new sfValidatorInteger(array('required' => false)),
       'created_at'          => new sfValidatorDateTime(),
       'updated_at'          => new sfValidatorDateTime(),
     ));

@@ -19,6 +19,7 @@ abstract class BaseProductsFormFilter extends BaseFormFilterDoctrine
       'code'                => new sfWidgetFormFilterInput(),
       'action_substance'    => new sfWidgetFormFilterInput(),
       'producer_id'         => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Producer'), 'add_empty' => true)),
+      'availability'        => new sfWidgetFormFilterInput(),
       'created_at'          => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => false)),
       'updated_at'          => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => false)),
     ));
@@ -30,6 +31,7 @@ abstract class BaseProductsFormFilter extends BaseFormFilterDoctrine
       'code'                => new sfValidatorPass(array('required' => false)),
       'action_substance'    => new sfValidatorPass(array('required' => false)),
       'producer_id'         => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Producer'), 'column' => 'id')),
+      'availability'        => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
       'created_at'          => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 00:00:00')), 'to_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 23:59:59')))),
       'updated_at'          => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 00:00:00')), 'to_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 23:59:59')))),
     ));
@@ -58,6 +60,7 @@ abstract class BaseProductsFormFilter extends BaseFormFilterDoctrine
       'code'                => 'Text',
       'action_substance'    => 'Text',
       'producer_id'         => 'ForeignKey',
+      'availability'        => 'Number',
       'created_at'          => 'Date',
       'updated_at'          => 'Date',
     );
