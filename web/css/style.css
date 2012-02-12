@@ -13,11 +13,8 @@ body {
     margin: 20px;
 }
 
-#container h1 {
-    margin: 0;
-}
-
 .logo {
+    margin: 0;
     display: block;
     width: 128px;
     height: 128px;
@@ -93,4 +90,59 @@ h1 {
 
 #sf_admin_container  .sf_admin_filter label {
     font-weight: bold !important;
+}
+
+.sf_admin_form {
+    width: 400px;
+}
+
+#sf_admin_container .sf_admin_form input[type="text"],
+#sf_admin_container .sf_admin_form input[type="email"],
+#sf_admin_container .sf_admin_form textarea,
+.sf_admin_filter input[type="text"] {
+    padding: 4px;
+    margin-bottom: 9px;
+    font-size: 13px;
+    line-height: 18px;
+    color: #555555;
+    border: 1px solid #ccc;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+    -moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+    -ms-transition: border linear 0.2s, box-shadow linear 0.2s;
+    -o-transition: border linear 0.2s, box-shadow linear 0.2s;
+    transition: border linear 0.2s, box-shadow linear 0.2s;
+}
+
+#sf_admin_container .sf_admin_form input[type="text"],
+#sf_admin_container .sf_admin_form input[type="email"],
+#sf_admin_container .sf_admin_form textarea,
+#sf_admin_container .sf_admin_form select,
+#sf_admin_container .sf_admin_filter input[type="text"],
+#sf_admin_container .sf_admin_filter select {
+    width: 210px;
+}
+
+#sf_admin_container .sf_admin_form textarea {
+    height: 150px;
+}
+
+#sf_admin_container .sf_admin_form input:focus,
+#sf_admin_container .sf_admin_form textarea:focus,
+.sf_admin_filter input[type="text"]:focus {
+    border-color: rgba(82, 168, 236, 0.8);
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+    -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+    outline: 0;
+    outline: thin dotted \9;
+    /* IE6-8 */
 }
