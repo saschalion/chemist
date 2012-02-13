@@ -12,5 +12,10 @@ class PreparationFormFormFilter extends BasePreparationFormFormFilter
 {
   public function configure()
   {
+      $this->widgetSchema->setLabels(
+        array(
+            'name' => 'Форма препарата'
+        )
+    );
   }
 }

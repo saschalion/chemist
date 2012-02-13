@@ -24,7 +24,7 @@ class ProductsFormFilter extends BaseProductsFormFilter
             'code' => 'Код',
             'type' => 'Тип',
             'action_substance' => 'Действие вещества',
-            'producer' => 'Производитель'
+            'producer_id' => 'Производитель'
         )
     );
     

@@ -8,17 +8,17 @@ Products:
       type: string(255)
       unique: true
     preparation_form_id: 
-        type: integer
-        notnull: true
+      type: integer
+      notnull: true
+    approach_usage:
+      type: string
     type: 
       type: string(255)
     code: 
       type: string(255)
     action_substance:
       type: string(255)
-    producer_id: 
-      type: integer
-    availability:
+    producer_id:
       type: integer
       
   relations:
@@ -31,7 +31,7 @@ Products:
       onDelete: CASCADE
       local: producer_id
       foreign: id
-      foreignAlias: Producer  
+      foreignAlias: Producer 
 
 # Лекарственная форма
 

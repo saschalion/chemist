@@ -7,30 +7,30 @@
  * 
  * @property string $purchase_name
  * @property integer $preparation_form_id
+ * @property string $approach_usage
  * @property string $type
  * @property string $code
  * @property string $action_substance
  * @property integer $producer_id
- * @property integer $availability
  * @property PreparationForm $PreparationForm
  * @property Producer $Producer
  * 
  * @method string          getPurchaseName()        Returns the current record's "purchase_name" value
  * @method integer         getPreparationFormId()   Returns the current record's "preparation_form_id" value
+ * @method string          getApproachUsage()       Returns the current record's "approach_usage" value
  * @method string          getType()                Returns the current record's "type" value
  * @method string          getCode()                Returns the current record's "code" value
  * @method string          getActionSubstance()     Returns the current record's "action_substance" value
  * @method integer         getProducerId()          Returns the current record's "producer_id" value
- * @method integer         getAvailability()        Returns the current record's "availability" value
  * @method PreparationForm getPreparationForm()     Returns the current record's "PreparationForm" value
  * @method Producer        getProducer()            Returns the current record's "Producer" value
  * @method Products        setPurchaseName()        Sets the current record's "purchase_name" value
  * @method Products        setPreparationFormId()   Sets the current record's "preparation_form_id" value
+ * @method Products        setApproachUsage()       Sets the current record's "approach_usage" value
  * @method Products        setType()                Sets the current record's "type" value
  * @method Products        setCode()                Sets the current record's "code" value
  * @method Products        setActionSubstance()     Sets the current record's "action_substance" value
  * @method Products        setProducerId()          Sets the current record's "producer_id" value
- * @method Products        setAvailability()        Sets the current record's "availability" value
  * @method Products        setPreparationForm()     Sets the current record's "PreparationForm" value
  * @method Products        setProducer()            Sets the current record's "Producer" value
  * 
@@ -53,6 +53,9 @@ abstract class BaseProducts extends sfDoctrineRecord
              'type' => 'integer',
              'notnull' => true,
              ));
+        $this->hasColumn('approach_usage', 'string', null, array(
+             'type' => 'string',
+             ));
         $this->hasColumn('type', 'string', 255, array(
              'type' => 'string',
              'length' => 255,
@@ -66,9 +69,6 @@ abstract class BaseProducts extends sfDoctrineRecord
              'length' => 255,
              ));
         $this->hasColumn('producer_id', 'integer', null, array(
-             'type' => 'integer',
-             ));
-        $this->hasColumn('availability', 'integer', null, array(
              'type' => 'integer',
              ));
 

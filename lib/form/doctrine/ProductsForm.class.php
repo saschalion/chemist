@@ -21,5 +21,24 @@ class ProductsForm extends BaseProductsForm
         'renderer_class'   => 'sfWidgetFormJQueryAutocompleter',
         'renderer_options' => array('url' => '/backend_dev.php/PreparationForm/autocomplete', 'config' => '{ multiple:true }'),
     ));
+
+    $this->widgetSchema['approach_usage']  = new sfWidgetFormChoice(array(
+        'choices'          => array(),
+        'renderer_class'   => 'sfWidgetFormJQueryAutocompleter',
+        'renderer_options' => array('url' => '/backend_dev.php/PreparationForm/autocomplete', 'config' => '{ multiple:true }'),
+    ));
+
+    $this->widgetSchema['approach_usage'] = new sfWidgetFormTextarea(array(
+    ));
+
+    $this->widgetSchema->setLabels(array(
+          'purchase_name' => 'Название препарата',
+          'preparation_form_id' => 'АТХ классификация (упрощённо) ',
+          'approach_usage' => 'Способ применения и дозы',
+          'type' => 'Форма препарата',
+          'code' => 'Код',
+          'action_substance' => 'Действующее вещества',
+          'producer_id' => 'Производитель'
+    ));
   }
 }

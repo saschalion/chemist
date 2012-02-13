@@ -2,7 +2,7 @@
   <?php if (!$pager->getNbResults()): ?>
     <p><?php echo __('No result', array(), 'sf_admin') ?></p>
   <?php else: ?>
-            
+    <?php include_partial('products/all_list_th_tabular', array('sort' => $sort)) ?>
     <ul class="all-products-list">
         <?php foreach ($pager->getResults() as $i => $products): $odd = fmod(++$i, 2) ? 'odd' : 'even' ?>
           <li class="<?php echo $odd ?>">            

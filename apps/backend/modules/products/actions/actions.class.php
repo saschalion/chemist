@@ -30,10 +30,10 @@ class productsActions extends autoProductsActions
     parent::preExecute();
 
     $this->getResponse()->addStylesheet('style.css', 'last');
+    $this->getResponse()->addStylesheet('highslide.css', 'last');
 
+    $this->getResponse()->addJavascript('/js/popup.js', 'last');
     $this->getResponse()->addJavascript('/js/jquery-1.4.2.min.js', 'first');
-    $this->getResponse()->addJavascript('/sfFormExtraPlugin/js/jquery.autocompleter.js', 'last');
-    $this->getResponse()->addJavascript('/js/jquery.json-2.2.js', 'last');
   }
     
       public function executeNew(sfWebRequest $request)
@@ -43,6 +43,12 @@ class productsActions extends autoProductsActions
     $this->getResponse()->addJavascript('/js/jquery-1.4.2.min.js', 'first');
     $this->getResponse()->addJavascript('/sfFormExtraPlugin/js/jquery.autocompleter.js', 'last');
     $this->getResponse()->addJavascript('/js/jquery.json-2.2.js', 'last');
+  }
+
+        public function executeShow(sfWebRequest $request)
+  {
+    $this->form = $this->configuration->getForm();
+    $this->products = $this->form->getObject();
   }
 
       public function executeList(sfWebRequest $request)

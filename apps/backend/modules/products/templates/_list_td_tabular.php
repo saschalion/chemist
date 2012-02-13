@@ -13,6 +13,17 @@
 <td class="sf_admin_text sf_admin_list_td_action_substance">
   <?php echo $products->getActionSubstance() ?>
 </td>
+<td class="sf_admin_text sf_admin_list_td_code">
+    <a href="#" class="highslide-two">
+        Показать
+    </a>
+    <div id="my-content">
+        <div class="popup-content">
+            <?php echo $products->getApproachUsage() ?>
+        </div>
+        <span class="close">Закрыть</span>
+    </div>
+</td>
 <td class="sf_admin_foreignkey sf_admin_list_td_producer_id">
   <?php echo $products->getProducerId() ?>
 </td>
