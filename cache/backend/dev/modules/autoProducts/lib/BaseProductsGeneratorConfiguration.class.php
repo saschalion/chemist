@@ -12,7 +12,7 @@ abstract class BaseProductsGeneratorConfiguration extends sfModelGeneratorConfig
 {
   public function getActionsDefault()
   {
-    return array();
+    return array(  '_save_and_add' =>   array(    'label' => 'Сохранить и добавить',  ),  '_save' =>   array(    'label' => 'Сохранить',  ),  '_edit' =>   array(    'label' => 'Редактировать',  ),  '_list' =>   array(    'label' => 'Назад к списку',  ),  '_delete' =>   array(    'label' => 'Удалить',  ),  '_new' =>   array(    'label' => 'Добавить',  ),);
   }
 
   public function getFormActions()
