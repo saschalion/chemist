@@ -1,0 +1,12 @@
+Reports:
+  1:
+    id: 1
+    name: Александр
+    among: 10
+    product_id: 1
+    
+  2:
+    id: 2
+    name: Василий
+    among: 5
+    product_id: 2

@@ -1,0 +1,12 @@
+Products:
+  1:
+    id: 1
+    purchase_name: Пищеварительный тракт и обмен веществ (A)
+    preparation_form_id: 1
+    available: 80
+    
+  2:
+    id: 2
+    purchase_name: Кровь и система кроветворения (B)
+    preparation_form_id: 2
+    available: 80

@@ -7,9 +7,6 @@ Products:
     purchase_name: 
       type: string(255)
       unique: true
-    preparation_form_id: 
-      type: integer
-      notnull: true
     approach_usage:
       type: string
     type: 
@@ -18,6 +15,11 @@ Products:
       type: string(255)
     action_substance:
       type: string(255)
+    available: 
+      type: integer
+    preparation_form_id: 
+      type: integer
+      notnull: true  
     producer_id:
       type: integer
       
@@ -53,7 +55,28 @@ Producer:
     name:
       type: string(255)
       notnull: true
-      unique: true      
+      unique: true     
+      
+# Накладные
+
+Reports:
+  columns:
+    name:
+      type: string(255)
+      notnull: true
+      unique: true  
+    among: 
+      type: integer
+    product_id:
+      type: integer
+
+  relations:
+    Products:
+      onDelete: CASCADE
+      onUpdate: CASCADE
+      local: product_id
+      foreign: id
+      foreignAlias: Products
       
 options:
     collate: utf8_general_ci

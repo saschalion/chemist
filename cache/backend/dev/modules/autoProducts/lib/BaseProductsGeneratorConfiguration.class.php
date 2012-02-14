@@ -47,7 +47,7 @@ abstract class BaseProductsGeneratorConfiguration extends sfModelGeneratorConfig
 
   public function getListParams()
   {
-    return '%%id%% - %%purchase_name%% - %%preparation_form_id%% - %%approach_usage%% - %%type%% - %%code%% - %%action_substance%% - %%producer_id%% - %%created_at%% - %%updated_at%%';
+    return '%%id%% - %%purchase_name%% - %%approach_usage%% - %%type%% - %%code%% - %%action_substance%% - %%available%% - %%preparation_form_id%% - %%producer_id%% - %%created_at%% - %%updated_at%%';
   }
 
   public function getListLayout()
@@ -92,7 +92,7 @@ abstract class BaseProductsGeneratorConfiguration extends sfModelGeneratorConfig
 
   public function getListDisplay()
   {
-    return array(  0 => 'id',  1 => 'purchase_name',  2 => 'preparation_form_id',  3 => 'approach_usage',  4 => 'type',  5 => 'code',  6 => 'action_substance',  7 => 'producer_id',  8 => 'created_at',  9 => 'updated_at',);
+    return array(  0 => 'id',  1 => 'purchase_name',  2 => 'approach_usage',  3 => 'type',  4 => 'code',  5 => 'action_substance',  6 => 'available',  7 => 'preparation_form_id',  8 => 'producer_id',  9 => 'created_at',  10 => 'updated_at',);
   }
 
   public function getFieldsDefault()
@@ -100,11 +100,12 @@ abstract class BaseProductsGeneratorConfiguration extends sfModelGeneratorConfig
     return array(
       'id' => array(  'is_link' => true,  'is_real' => true,  'is_partial' => false,  'is_component' => false,  'type' => 'Text',),
       'purchase_name' => array(  'is_link' => false,  'is_real' => true,  'is_partial' => false,  'is_component' => false,  'type' => 'Text',),
-      'preparation_form_id' => array(  'is_link' => false,  'is_real' => true,  'is_partial' => false,  'is_component' => false,  'type' => 'ForeignKey',),
       'approach_usage' => array(  'is_link' => false,  'is_real' => true,  'is_partial' => false,  'is_component' => false,  'type' => 'Text',),
       'type' => array(  'is_link' => false,  'is_real' => true,  'is_partial' => false,  'is_component' => false,  'type' => 'Text',),
       'code' => array(  'is_link' => false,  'is_real' => true,  'is_partial' => false,  'is_component' => false,  'type' => 'Text',),
       'action_substance' => array(  'is_link' => false,  'is_real' => true,  'is_partial' => false,  'is_component' => false,  'type' => 'Text',),
+      'available' => array(  'is_link' => false,  'is_real' => true,  'is_partial' => false,  'is_component' => false,  'type' => 'Text',),
+      'preparation_form_id' => array(  'is_link' => false,  'is_real' => true,  'is_partial' => false,  'is_component' => false,  'type' => 'ForeignKey',),
       'producer_id' => array(  'is_link' => false,  'is_real' => true,  'is_partial' => false,  'is_component' => false,  'type' => 'ForeignKey',),
       'created_at' => array(  'is_link' => false,  'is_real' => true,  'is_partial' => false,  'is_component' => false,  'type' => 'Date',),
       'updated_at' => array(  'is_link' => false,  'is_real' => true,  'is_partial' => false,  'is_component' => false,  'type' => 'Date',),
@@ -116,11 +117,12 @@ abstract class BaseProductsGeneratorConfiguration extends sfModelGeneratorConfig
     return array(
       'id' => array(),
       'purchase_name' => array(),
-      'preparation_form_id' => array(),
       'approach_usage' => array(),
       'type' => array(),
       'code' => array(),
       'action_substance' => array(),
+      'available' => array(),
+      'preparation_form_id' => array(),
       'producer_id' => array(),
       'created_at' => array(),
       'updated_at' => array(),
@@ -132,11 +134,12 @@ abstract class BaseProductsGeneratorConfiguration extends sfModelGeneratorConfig
     return array(
       'id' => array(),
       'purchase_name' => array(),
-      'preparation_form_id' => array(),
       'approach_usage' => array(),
       'type' => array(),
       'code' => array(),
       'action_substance' => array(),
+      'available' => array(),
+      'preparation_form_id' => array(),
       'producer_id' => array(),
       'created_at' => array(),
       'updated_at' => array(),
@@ -148,11 +151,12 @@ abstract class BaseProductsGeneratorConfiguration extends sfModelGeneratorConfig
     return array(
       'id' => array(),
       'purchase_name' => array(),
-      'preparation_form_id' => array(),
       'approach_usage' => array(),
       'type' => array(),
       'code' => array(),
       'action_substance' => array(),
+      'available' => array(),
+      'preparation_form_id' => array(),
       'producer_id' => array(),
       'created_at' => array(),
       'updated_at' => array(),
@@ -164,11 +168,12 @@ abstract class BaseProductsGeneratorConfiguration extends sfModelGeneratorConfig
     return array(
       'id' => array(),
       'purchase_name' => array(),
-      'preparation_form_id' => array(),
       'approach_usage' => array(),
       'type' => array(),
       'code' => array(),
       'action_substance' => array(),
+      'available' => array(),
+      'preparation_form_id' => array(),
       'producer_id' => array(),
       'created_at' => array(),
       'updated_at' => array(),
@@ -180,11 +185,12 @@ abstract class BaseProductsGeneratorConfiguration extends sfModelGeneratorConfig
     return array(
       'id' => array(),
       'purchase_name' => array(),
-      'preparation_form_id' => array(),
       'approach_usage' => array(),
       'type' => array(),
       'code' => array(),
       'action_substance' => array(),
+      'available' => array(),
+      'preparation_form_id' => array(),
       'producer_id' => array(),
       'created_at' => array(),
       'updated_at' => array(),

@@ -12,4 +12,13 @@
  */
 class Products extends BaseProducts
 {
+      public function save(Doctrine_Connection $conn = null)
+{
+      if (!$this->getPreparationFormId())
+  {
+        $this->setPreparationFormId();
+  }
+    return parent::save($conn);
+}
+
 }

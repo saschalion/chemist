@@ -1,3 +1,12 @@
+reports:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Reports
+    module:               reports
+    prefix_path:          /reports
+    column:               id
+    with_wildcard_routes: true
+
 producer:
   class: sfDoctrineRouteCollection
   options:

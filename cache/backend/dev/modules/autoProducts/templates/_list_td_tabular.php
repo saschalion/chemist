@@ -4,9 +4,6 @@
 <td class="sf_admin_text sf_admin_list_td_purchase_name">
   <?php echo $products->getPurchaseName() ?>
 </td>
-<td class="sf_admin_foreignkey sf_admin_list_td_preparation_form_id">
-  <?php echo $products->getPreparationFormId() ?>
-</td>
 <td class="sf_admin_text sf_admin_list_td_approach_usage">
   <?php echo $products->getApproachUsage() ?>
 </td>
@@ -18,6 +15,12 @@
 </td>
 <td class="sf_admin_text sf_admin_list_td_action_substance">
   <?php echo $products->getActionSubstance() ?>
+</td>
+<td class="sf_admin_text sf_admin_list_td_available">
+  <?php echo $products->getAvailable() ?>
+</td>
+<td class="sf_admin_foreignkey sf_admin_list_td_preparation_form_id">
+  <?php echo $products->getPreparationFormId() ?>
 </td>
 <td class="sf_admin_foreignkey sf_admin_list_td_producer_id">
   <?php echo $products->getProducerId() ?>

@@ -17,5 +17,8 @@
         <li class="<?php echo ($module == 'PreparationForm' ? 'active' : '')?>">
             <?php echo link_to('Форма препарата', 'PreparationForm/index') ?>
         </li>
+        <li class="<?php echo ($module == 'reports' ? 'active' : '')?>">
+            <?php echo link_to('Накладные', 'reports/index') ?>
+        </li>
     </ul>
 </div>
