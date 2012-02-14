@@ -12,5 +12,10 @@ class ReportsForm extends BaseReportsForm
 {
   public function configure()
   {
+      $this->widgetSchema['product_id']  = new sfWidgetFormChoice(array(
+        'choices'          => array(),
+        'renderer_class'   => 'sfWidgetFormJQueryAutocompleter',
+        'renderer_options' => array('url' => '/backend_dev.php/products/autocomplete', 'config' => '{ multiple:true }'),
+    ));
   }
 }

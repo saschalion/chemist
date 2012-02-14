@@ -20,13 +20,7 @@ class ProductsForm extends BaseProductsForm
         'choices'          => array(),
         'renderer_class'   => 'sfWidgetFormJQueryAutocompleter',
         'renderer_options' => array('url' => '/backend_dev.php/PreparationForm/autocomplete', 'config' => '{ multiple:true }'),
-    ));
-
-    $this->widgetSchema['approach_usage']  = new sfWidgetFormChoice(array(
-        'choices'          => array(),
-        'renderer_class'   => 'sfWidgetFormJQueryAutocompleter',
-        'renderer_options' => array('url' => '/backend_dev.php/PreparationForm/autocomplete', 'config' => '{ multiple:true }'),
-    ));
+    )); 
 
     $this->widgetSchema['approach_usage'] = new sfWidgetFormTextarea(array(
     ));

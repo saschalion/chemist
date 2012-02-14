@@ -72,4 +72,27 @@ class productsActions extends autoProductsActions
     $this->products = $this->form->getObject();
   }
   
+        public function executeAutocomplete($request)
+  { 
+    $this->getResponse()->setContentType('application/json');
+ 
+    $q = "%" . $request->getParameter('q') . "%";
+    
+    $limit = $request->getParameter('limit');
+    
+    // FIXME: use $limit
+    $dql = Doctrine_Query::create()
+         ->from('Products p')
+    		 ->where('p.purchase_name LIKE ? OR p.purchase_name LIKE ?', array($q, $q));
+    $this->rows = $dql->fetchArray();
+
+    $persons = array();
+    foreach ($this->rows as $row)
+    {
+      $persons[$row['id']] = (string) $row['purchase_name'];
+    }
+  
+    return $this->renderText(json_encode($persons));
+  }
+  
 }
