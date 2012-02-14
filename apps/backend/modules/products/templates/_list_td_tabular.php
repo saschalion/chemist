@@ -14,6 +14,7 @@
   <?php echo $products->getActionSubstance() ?>
 </td>
 <td class="sf_admin_text sf_admin_list_td_code">
+    <?php if ($products->getApproachUsage()): ?>
     <a href="#" class="highslide-two">
         Показать
     </a>
@@ -23,10 +24,14 @@
         </div>
         <span class="close">Закрыть</span>
     </div>
+    <?php endif; ?>
 </td>
 <td class="sf_admin_foreignkey sf_admin_list_td_producer_id">
   <?php echo $products->getProducerId() ?>
 </td>
 <td class="sf_admin_date sf_admin_list_td_updated_at">
   <?php echo false !== strtotime($products->getCreatedAt()) ? format_date($products->getCreatedAt(), 'dd.MM.yyyy') : '&nbsp;' ?>
+</td>
+<td class="sf_admin_date sf_admin_list_td_updated_at">
+  <?php echo $products->getAvailable(); ?>
 </td>
