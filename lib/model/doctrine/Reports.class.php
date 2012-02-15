@@ -18,7 +18,14 @@ class Reports extends BaseReports
       if ($this->getAmong())
       {
         $this->getProducts()->setAvailable($this->getProducts()->getAvailable() - $this->getAmong());
-      }    
+        
+        $this->getProducts()->setCharge($this->getProducts()->getCharge() + $this->getAmong());
+      }  
+      
+      if ($this->getProductId())
+      {
+        $this->setProductId($this->getProducts()->getPurchaseName());
+      } 
       
       return parent::save($conn);
     }

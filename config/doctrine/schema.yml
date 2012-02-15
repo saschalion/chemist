@@ -17,6 +17,8 @@ Products:
       type: string(255)
     available: 
       type: integer
+    charge:
+      type: integer
     preparation_form_id: 
       type: integer
       notnull: true  

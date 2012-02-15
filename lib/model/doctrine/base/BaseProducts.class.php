@@ -11,6 +11,7 @@
  * @property string $code
  * @property string $action_substance
  * @property integer $available
+ * @property integer $charge
  * @property integer $preparation_form_id
  * @property integer $producer_id
  * @property PreparationForm $PreparationForm
@@ -23,6 +24,7 @@
  * @method string              getCode()                Returns the current record's "code" value
  * @method string              getActionSubstance()     Returns the current record's "action_substance" value
  * @method integer             getAvailable()           Returns the current record's "available" value
+ * @method integer             getCharge()              Returns the current record's "charge" value
  * @method integer             getPreparationFormId()   Returns the current record's "preparation_form_id" value
  * @method integer             getProducerId()          Returns the current record's "producer_id" value
  * @method PreparationForm     getPreparationForm()     Returns the current record's "PreparationForm" value
@@ -34,6 +36,7 @@
  * @method Products            setCode()                Sets the current record's "code" value
  * @method Products            setActionSubstance()     Sets the current record's "action_substance" value
  * @method Products            setAvailable()           Sets the current record's "available" value
+ * @method Products            setCharge()              Sets the current record's "charge" value
  * @method Products            setPreparationFormId()   Sets the current record's "preparation_form_id" value
  * @method Products            setProducerId()          Sets the current record's "producer_id" value
  * @method Products            setPreparationForm()     Sets the current record's "PreparationForm" value
@@ -71,6 +74,9 @@ abstract class BaseProducts extends sfDoctrineRecord
              'length' => 255,
              ));
         $this->hasColumn('available', 'integer', null, array(
+             'type' => 'integer',
+             ));
+        $this->hasColumn('charge', 'integer', null, array(
              'type' => 'integer',
              ));
         $this->hasColumn('preparation_form_id', 'integer', null, array(

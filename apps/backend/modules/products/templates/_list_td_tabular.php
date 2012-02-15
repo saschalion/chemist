@@ -1,19 +1,19 @@
-<td class="sf_admin_text sf_admin_list_td_purchase_name">
+<td>
   <?php if ($products->getPurchaseName()) echo link_to($products->getPurchaseName(), 'products_edit', $products) ?>
 </td>
-<td class="sf_admin_foreignkey sf_admin_list_td_preparation_form_id">
+<td>
   <?php echo $products->getPreparationForm() ?>
 </td>
-<td class="sf_admin_text sf_admin_list_td_type">
+<td>
   <?php echo $products->getType() ?>
 </td>
-<td class="sf_admin_text sf_admin_list_td_code">
+<td>
   <?php echo $products->getCode() ?>
 </td>
-<td class="sf_admin_text sf_admin_list_td_action_substance">
+<td>
   <?php echo $products->getActionSubstance() ?>
 </td>
-<td class="sf_admin_text sf_admin_list_td_code">
+<td>
     <?php if ($products->getApproachUsage()): ?>
     <a href="#" class="highslide-two">
         Показать
@@ -26,12 +26,15 @@
     </div>
     <?php endif; ?>
 </td>
-<td class="sf_admin_foreignkey sf_admin_list_td_producer_id">
+<td>
   <?php echo $products->getProducerId() ?>
 </td>
-<td class="sf_admin_date sf_admin_list_td_updated_at">
+<td>
   <?php echo false !== strtotime($products->getCreatedAt()) ? format_date($products->getCreatedAt(), 'dd.MM.yyyy') : '&nbsp;' ?>
 </td>
-<td class="sf_admin_date sf_admin_list_td_updated_at">
+<td>
   <?php echo $products->getAvailable(); ?>
+</td>
+<td>
+  <?php echo $products->getCharge(); ?>
 </td>
